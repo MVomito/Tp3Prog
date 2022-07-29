@@ -21,40 +21,41 @@
                 <label>Mot de passe :</label>
                 <input class="input" type="password" name="passwords" placeholder="Votre mot de passe" />
                 <div class="btnDiv d-flex flex-row m-3">
-                    <input type="submit" name="Envoyer" value="Envoyer" class="btnSubmit btn-success m-2" />
-                    <button type="submit" name="Envoyer" value="Créer un compte" class="btnCreate btn-warning m-2"><a href="signUp.php">Créer un compte</a></button>
+                    <input type="submit" name="submit" value="Envoyer" class="btnSubmit btn-success m-2" />
+                    <input type="submit" name="creer" value="S'inscire" class="btnCreate btn-warning m-2"/>
                 </div>
             </form>
             <?php
 
-            if (empty($_POST["username"]) || empty($_POST["passwords"])) {
-
-                echo "<script language='javascript'> alert('Erreur veuillez Resseyer ')</script>";
+            if (isset($_POST['creer'])) {
+                header("location: signUp.php");
             }
 
-            $username = $_POST["username"];
-            $passwords = $_POST["passwords"];
+            if (isset($_POST['submit'])) {
+                if (empty($_POST["username"]) || empty($_POST["passwords"])) {
+                    echo "<script language='javascript'> alert('Erreur veuillez Resseyer ')</script>";
+                }
 
-            $checkUser = $conn->prepare(
-                "SELECT * FROM utilisateur 
+                $username = $_POST["username"];
+                $passwords = $_POST["passwords"];
+
+                $checkUser = $conn->prepare(
+                    "SELECT * FROM utilisateur 
                     WHERE username =:username AND passwords = :passwords"
-            );
+                );
 
-            $checkUser->bindParam(':username', $username,);
-            $checkUser->bindParam(':passwords', $passwords);
-            $checkUser->execute();
-            $account = $checkUser->rowCount();
+                $checkUser->bindParam(':username', $username,);
+                $checkUser->bindParam(':passwords', $passwords);
+                $checkUser->execute();
+                $account = $checkUser->fetchAll();
 
-            if($account > 0)  
-            {       
-                 $_SESSION["username"] = $_POST["username"];
-                 echo "<script language='javascript'> alert('Conexion au compte Reussi nOyCe (;')</script>";  
-                 header("location: traitement.php");  
-            }  
-            else  
-            {  
-                echo "<script language='javascript'> alert('Vous n'avez pas de Compte (;')</script>";
-            } 
+                if ($account) {
+                    echo "<script language='javascript'> alert('Conexion au compte Reussi nOyCe (;')</script>";
+                    header("location: traitement.php");
+                } else {
+                    echo "<script language='javascript'> alert('Vous n'avez pas de Compte (;')</script>";
+                }
+            }
 
             ?>
         </div>

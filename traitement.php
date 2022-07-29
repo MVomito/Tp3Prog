@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Cours PHP</title>
-    <meta charset="utf-8">
-</head>
-
-<body>
     <?php
-
+    session_start();  
     $username = $_POST["username"];
-    $password = $_POST["passwords"];
+    $passwords = $_POST["passwords"];
 
     $_SESSION["username"] = $username;
-    $_SESSION["passwords"] = $password;
-    echo $nom;
-    echo $password;
-    header("Location: mainPage.php")
-    ?>
-    
-</body>
+    $_SESSION["passwords"] = $passwords;
+    var_dump($username);
 
-</html>
+    //header("Location: mainPage.php");

@@ -1,4 +1,6 @@
-<?php include "ConnexionBD.php"; ?>
+<?php
+include "ConnexionBD.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +17,7 @@
 <body>
     <div>
         <div class="accueilDiv">
-            <form class="accueilForm w-50" action="addUtilisateur.php" method="post">
+            <form class="accueilForm" action="addUtilisateur.php" method="post">
                 <h1 class="mainTitle">Creer un Compte</h1>
                 <label>Nom d'utilisateur</label>
                 <input class="input" type="text" name="username" placeholder="Votre nom d'utilisateur">

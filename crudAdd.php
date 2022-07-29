@@ -1,20 +1,23 @@
 <?php
 include "ConnexionBD.php";
 
-$NomProduits = $_POST["NomProduits"];
-$prixProduits = $_POST["prixProduits"];
-$datesProduits = $_POST["dateProduits"];
+$liste = $_POST["liste"];
+$prix = $_POST["prix"];
 
-$ajouterProduits = $conn->prepare("
-INSERT INTO produits (liste, prix, dates)
-VALUES (:NomProduits, :prixProduits, :dateProduits)
+if (empty($liste)) {
+    echo "<script language='javascript'> alert(' ')</script>";
+  } else {
+
+    $ajouterProduits = $conn->prepare("
+    INSERT INTO produits (liste, prix)
+        VALUES (:liste, :prix)
 ");
 
-$ajouterProduits->bindParam('NomProduits', $NomProduits);
-$ajouterProduits->bindParam('prixProduits', $prixProduits);
-$ajouterProduits->bindParam('dateProduits', $datesProduits);
+$ajouterProduits->bindParam('liste', $liste);
+$ajouterProduits->bindParam('prix', $prix);
 
 $ajouterProduits->execute();
 
 header("Location: mainPage.php");
-?>
+  }
+
