@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+ a {
+    text-decoration: none;
+}
+
 body {
     margin: 0px;
 }
@@ -18,11 +22,6 @@ body {
 .accueilForm {
     margin: 10px;
     border-radius: 20px;
-}
-
-.mainTitle {
-    margin-left: 205px;
-    margin-bottom: 50px
 }
 
 .input {

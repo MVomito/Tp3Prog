@@ -17,5 +17,5 @@ $modifierDepense->bindParam('prixDepense', $prixDepense);
 
 $modifierDepense->execute();
 
-header("Location:Accueil.php");
+header("Location :mainPage.php");
 ?>
