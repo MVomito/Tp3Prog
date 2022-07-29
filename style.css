@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+.accueilForm {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    background-color: azure;
+    padding: 60px 300px;
+    width: 1200px;
+}
+
+.accueilForm {
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.mainTitle {
+    margin-left: 205px;
+    margin-bottom: 50px
+}
+
+.input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.btnSubmit {
+    border-radius: 10px;
+    background-color: palegreen;
+    padding: 12px;
+    width: 200px;
+    font-size: 18px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.btnCreate {
+    border-radius: 10px;
+    background-color: rgb(78, 199, 255);
+    padding: 12px;
+    width: 200px;
+    font-size: 18px;
+    margin: 10px auto;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btnDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.accueilDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    padding: 166px 0px;
+}
+
+.footer {
+    background-color: rgb(37, 36, 36);
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: white;
+}
