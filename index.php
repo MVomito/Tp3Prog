@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include "ConnexionBD.php"; ?>
 <html lang="en">
 
 <head>
@@ -13,7 +14,7 @@
 <body>
     <div>
         <div class="accueilDiv">
-            <form class="accueilForm" method="post" action="validUtilisateur.php">
+            <form class="accueilForm" method="post" action="index.php">
                 <h1 class="mainTitle">Se connecter</h1>
                 <label>Nom d'utilisateur</label>
                 <input class="input" type="text" name="username" placeholder="Votre nom d'utilisateur" />
@@ -24,6 +25,26 @@
                     <button type="submit" name="Envoyer" value="Créer un compte" class="btnCreate"><a href="signUp.php">Créer un compte</a></button>
                 </div>
             </form>
+            <?php
+
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                
+                if (empty($_POST["username"])) {
+                    echo "<script language='javascript'> alert('Mauvais Username')</script>";
+                } else {
+                    echo "<script language='javascript'> alert('Conexion au compte')</script>";
+                    header("Location: validUtilisateur.php");
+                }
+
+                if (empty($_POST["passwords"])) {
+                    echo "<script language='javascript'> alert('Mauvais Mot de passe')</script>";
+                  } else {
+                    echo "<script language='javascript'> alert('Conexion au compte')</script>";
+                    header("Location: validUtilisateur.php");
+                  }
+            }
+
+            ?>
         </div>
     </div>
     <div class="footer">WEBA21LC-TP</div>
