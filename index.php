@@ -12,17 +12,23 @@
 </head>
 
 <body>
-    <div>
+    <div class="">
         <div class="accueilDiv">
+<<<<<<< HEAD
             <form class="accueilForm" method="post" action="index.php">
                 <h1 class="mainTitle">Se connecter</h1>
                 <label>Nom d'utilisateur</label>
+=======
+            <form class="accueilForm row" method="post" action="validUtilisateur.php" >
+                <h1 class=" text-center p-4 m-2">Se connecter</h1>
+                <label>Nom d'utilisateur :</label>
+>>>>>>> f4a279379ba44286726eba495d4f221811f352b8
                 <input class="input" type="text" name="username" placeholder="Votre nom d'utilisateur" />
-                <label>Mot de passe </label>
+                <label>Mot de passe :</label>
                 <input class="input" type="password" name="passwords" placeholder="Votre mot de passe" />
-                <div class="btnDiv">
-                    <input type="submit" name="Envoyer" value="Envoyer" class="btnSubmit" />
-                    <button type="submit" name="Envoyer" value="Créer un compte" class="btnCreate"><a href="signUp.php">Créer un compte</a></button>
+                <div class="btnDiv d-flex flex-row m-3">
+                    <input type="submit" name="Envoyer" value="Envoyer" class="btnSubmit btn-success" />
+                    <button type="submit" name="Envoyer" value="Créer un compte" class="btnCreate btn-warning "><a href="signUp.php">Créer un compte</a></button>
                 </div>
             </form>
             <?php
@@ -47,7 +53,7 @@
             ?>
         </div>
     </div>
-    <div class="footer">WEBA21LC-TP</div>
+    <div class="footer container-fluid p-4">WEBA21LC-TP</div>
 </body>
 
 </html>
