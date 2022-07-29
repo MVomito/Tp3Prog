@@ -1,21 +1,4 @@
-<?php
-include "ConnexionBD.php";
-if (isset($_POST["submit"])) {
-    $username = $_POST["username"];
-    $passwords = $_POST["passwords"];
-    $name = $_POST["name"];
-
-    $insertionUtilisateur = $conn->prepare(
-        "INSERT INTO utilisateur (username, passwords, name)
-         VALUES (:username, :passwords, :name)"
-    );
-
-    $insertionUtilisateur->bindParam(':username', $username);
-    $insertionUtilisateur->bindParam(':passwords', $passwords);
-    $insertionUtilisateur->bindParam(':name', $name);
-    $insertionUtilisateur->execute();
-}
-?>
+<?php include "ConnexionBD.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +15,7 @@ if (isset($_POST["submit"])) {
 <body>
     <div>
         <div class="accueilDiv">
-            <form class="accueilForm" action="addUtilisateur.php" method="post">
+            <form class="accueilForm w-50" action="addUtilisateur.php" method="post">
                 <h1 class="mainTitle">Creer un Compte</h1>
                 <label>Nom d'utilisateur</label>
                 <input class="input" type="text" name="username" placeholder="Votre nom d'utilisateur">
