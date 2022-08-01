@@ -48,7 +48,7 @@
             echo "<td>" . $tables[$i]["liste"] . "</td>";
             echo "<td>" . $tables[$i]["prix"] . "</td>";
             echo "<td><span>";
-            echo "<input type=\"button\" onclick=\"location.href='crudAdd.php?id=" . $tables[$i]["id_produits"] . "&titre=" . $tables[$i]["liste"] . "&prix=" . $tables[$i]["prix"] . "'\" \name=\"Modifier\" class=\"btn btn-success\" value=\"Modifier\">";
+            echo "<input type=\"button\" onclick=\"location.href='crudUpdate.php?id=" . $tables[$i]["id_produits"] . "&titre=" . $tables[$i]["liste"] . "&prix=" . $tables[$i]["prix"] . "'\" \name=\"Modifier\" class=\"btn btn-success\" value=\"Modifier\">";
             echo "<input type=\"button\" onclick=\"location.href='crudDelete.php?id=" . $tables[$i]["id_produits"] . "'\" \name=\"Supprimer\" class=\"btn btn-danger\" value=\"Supprimer\">";
         }
         ?>

@@ -1,21 +1,21 @@
 <?php
 include "ConnexionBD.php";
 
-$idDepense = $_GET["id"];
-$titreDepense = $_POST["titreDepense"];
-$prixDepense = $_POST["prixDepense"];
+$id_produits = $_GET["id_produits"];
+$liste = $_POST["liste"];
+$prix = $_POST["prix"];
 
-$modifierDepense = $conn->prepare("
-UPDATE Depense
-SET titreDepense = :titreDepense, prixDepense = :prixDepense
-WHERE idDepense = :idDepense
+$modifierProduits = $conn->prepare("
+UPDATE produits
+SET liste = :liste, prix = :prix
+WHERE id_produits = :id_produits
 ");
 
-$modifierDepense->bindParam('idDepense', $idDepense);
-$modifierDepense->bindParam('titreDepense', $titreDepense);
-$modifierDepense->bindParam('prixDepense', $prixDepense);
+$modifierProduits->bindParam('id_produits', $id_produits);
+$modifierProduits->bindParam('liste', $liste);
+$modifierProduits->bindParam('prix', $prix);
 
-$modifierDepense->execute();
+$modifierProduits->execute();
 
 header("Location :mainPage.php");
 ?>
