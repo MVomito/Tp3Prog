@@ -1,8 +1,8 @@
 <?php
 include "ConnexionBD.php";
 
-$id_produits = $_GET["id_produits"];
-$liste = $_POST["liste"];
+$id_produits = $_GET["id"];
+$liste = $_POST["titre"];
 $prix = $_POST["prix"];
 
 $modifierProduits = $conn->prepare("
@@ -17,4 +17,4 @@ $modifierProduits->bindParam('prix', $prix);
 
 $modifierProduits->execute();
 
-//header("Location :mainPage.php");
+header("Location :mainPage.php");

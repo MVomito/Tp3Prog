@@ -15,7 +15,7 @@
         <button class="btn btn-danger p-2" onclick="location.href='logout.php'">Deconexion</button>
     </nav>
     <div>
-        <h4 class="d-flex justify-content-center">tin un pti jam pour ta session de correction</h4>
+        <h4 class="d-flex justify-content-center m-5">tin un pti jam pour ta session de correction</h4>
         <iframe class="d-flex justify-content-center" autoplay="1" width="500" height="200" src="https://www.youtube.com/embed/4fndeDfaWCg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     <div class="mt-5">
@@ -41,7 +41,7 @@
         <?php
         include "showProduct.php";
         $tables = showProduct();
-        echo "<h2 class='d-flex justify-content-center m-3 text-center'>Liste Des Produits</h2>";
+        echo "<h2 class='d-flex justify-content-center m-1 text-center'>Liste Des Produits</h2>";
         echo "<table class='container'>";
         echo "<tr>";
         echo "<th class='h3 text-center'>Num</th>";

@@ -1,9 +1,7 @@
 <?php
 include "ConnexionBD.php";
 
-$id_produits = $_GET["id_produits"];
-
-echo "$id_produits";
+$id_produits = $_GET["id"];
 
 $supprimerProduits = $conn->prepare("
 DELETE FROM produits
