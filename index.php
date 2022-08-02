@@ -22,10 +22,15 @@
                 <input class="input" type="password" name="passwords" placeholder="Votre mot de passe" />
                 <div class="btnDiv d-flex flex-row m-3">
                     <input type="submit" name="submit" value="Envoyer" class="btnSubmit btn-success m-2" />
-                    <input type="submit" name="creer" value="S'inscire" class="btnCreate btn-info m-2"/>
+                    <input type="submit" name="creer" value="S'inscire" class="btnCreate btn-info m-2" />
                 </div>
             </form>
             <?php
+
+            if (isset($_POST['submit'])) {
+                session_start();
+                $_SESSION['username'] = $_POST['username'];
+            }
 
             if (isset($_POST['creer'])) {
                 header("location: signUp.php");
@@ -34,6 +39,8 @@
             if (isset($_POST['submit'])) {
                 if (empty($_POST["username"]) || empty($_POST["passwords"])) {
                     echo "<script language='javascript'> alert('Erreur veuillez Resseyer ')</script>";
+                } else {
+                    header("Location: mainPage.php");
                 }
 
                 $username = $_POST["username"];
@@ -51,7 +58,6 @@
 
                 if ($account) {
                     echo "<script language='javascript'> alert('Conexion au compte Reussi nOyCe (;')</script>";
-                    header("location: traitement.php");
                 } else {
                     echo "<script language='javascript'> alert('Vous n'avez pas de Compte (;')</script>";
                 }

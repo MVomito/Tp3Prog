@@ -72,3 +72,48 @@ body {
     justify-content: flex-end;
     color: white;
 }
+
+tr,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px 0px 10px 0px;
+}
+table {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+th {
+    padding: 10px;
+    margin: 10px;
+}
+tr {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 30px;
+    border: transparent;
+    font-family: "Mitr", sans-serif;
+    margin-top: 100px;
+    padding-top: 5px;
+    padding-bottom: 30px;
+  }
+
+  .buttonTable {
+    margin: 0px;
+  }
+
+  iframe {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    margin-top: 20px;
+  }

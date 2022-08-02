@@ -15,4 +15,3 @@ function showProduct() {
         echo "Erreur : " . $e();
     }
 }
-?>
