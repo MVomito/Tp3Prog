@@ -9,22 +9,24 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark ">
-        <button class="btn btn-danger">Deconexion</button>
+    <nav class="navbar navbar-dark bg-dark justify-content-end p-3">
+        <button class="btn btn-danger p-2" onclick="location.href='logout.php'">Deconexion</button>
     </nav>
-    <br><br>
-    <div class="m-2 p-3">
-        <h1>Ajouter une Produit a la liste</h1>
-        <form action="crudAdd.php" method="post">
-            <div class="champ">
-                <label>Liste:</label>
+    <div class="mt-5">
+        <h1 class="d-flex justify-content-center">Ajouter une Produit a la liste</h1>
+        <h2 class="d-flex justify-content-center m-2">Bonjour <?php echo "$username"; ?></h2>
+    </div>
+    <div class="m-5 p-3 d-flex justify-content-center align-items-center">
+        <form action="crudAdd.php" method="post" class="d-flex justify-content-center align-items-center"  >
+            <div class="m-2">
+                <label>Nom :</label>
                 <input type="text" name="liste" />
             </div>
-            <div class="champ">
+            <div class="m-2">
                 <label>Prix</label>
                 <input type="number" name="prix" />
             </div>
-            <div class="champ">
+            <div class="m-2">
                 <input type="submit" name="Sauvegarder" class="btn btn-primary" value="Ajouter" />
             </div>
         </form>
@@ -34,15 +36,16 @@
         include "showProduct.php";
         $tables = showProduct();
 
-        echo "<h2>Liste Des Produits</h2>";
-        echo "<table>";
+        echo "<h2 class='d-flex justify-content-center'>Liste Des Produits</h2>";
+        echo "<table class='d-flex justify-content-center'>";
         echo "<tr>";
-        echo "<th>Id</th>";
-        echo "<th>liste</th>";
-        echo "<th>Prix</th>";
+        echo "<th class='m-4 h2' >Num</th>";
+        echo "<th class='m-4 h2'>Id Produit</th>";
+        echo "<th class='m-4 h2'>Liste</th>";
+        echo "<th class='m-4 h2'>Prix</th>";
         echo "</tr>";
         echo "</table>";
-
+        
         for ($i = 0; $i < count($tables); $i++) {
             echo "<tr>";
             echo "<td>" . $tables[$i]["liste"] . "</td>";

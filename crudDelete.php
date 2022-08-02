@@ -1,14 +1,14 @@
 <?php
 include "ConnexionBD.php";
 
-$id_produits = $_GET["id_produits"];
+$id_produits = $_GET["Supprimer"];
 
 $supprimerProduits = $conn->prepare("
 DELETE FROM produits
-WHERE id_produits = :id_produits
+WHERE Supprimer = :id_produits
 ");
 
-$supprimerProduits->bindParam('id_produits', $id_produits);
+$supprimerProduits->bindParam('Supprimer', $id_produits);
 
 $supprimerProduits->execute();
 

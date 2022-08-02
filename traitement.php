@@ -5,6 +5,5 @@
 
     $_SESSION["username"] = $username;
     $_SESSION["passwords"] = $passwords;
-    var_dump($username);
 
     header("Location: mainPage.php");

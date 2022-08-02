@@ -14,7 +14,12 @@ include "ConnexionBD.php";
     $insertionUtilisateur->bindParam(':name', $name);
     $insertionUtilisateur->execute();
     
-    echo "<script language='javascript'> alert('Vous avez creer votre compte')</script>";
+    if (!empty($insertionUtilisateur)) {
+        echo "<script language='javascript'> alert('Vous avez creer votre compte')</script>";
+        header("Location: index.php");
+    } else {
+        echo "<script language='javascript'> alert('Une Erreur est Survenue')</script>";
+    }
+
     
-    header("Location: index.php") 
     ?>
