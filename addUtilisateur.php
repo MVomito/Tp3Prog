@@ -22,4 +22,3 @@ include "ConnexionBD.php";
     }
 
     
-    ?>

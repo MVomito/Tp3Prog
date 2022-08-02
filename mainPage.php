@@ -14,7 +14,7 @@
     </nav>
     <div class="mt-5">
         <h1 class="d-flex justify-content-center">Ajouter une Produit a la liste</h1>
-        <h2 class="d-flex justify-content-center m-2">Bonjour <?php echo "$username"; ?></h2>
+        <h2 class="d-flex justify-content-center m-2">Bonjour <?php echo $_SESSION["username"]; ?></h2>
     </div>
     <div class="m-5 p-3 d-flex justify-content-center align-items-center">
         <form action="crudAdd.php" method="post" class="d-flex justify-content-center align-items-center"  >
@@ -36,23 +36,27 @@
         include "showProduct.php";
         $tables = showProduct();
 
-        echo "<h2 class='d-flex justify-content-center'>Liste Des Produits</h2>";
+        echo "<h2 class='d-flex justify-content-center m-3'>Liste Des Produits</h2>";
         echo "<table class='d-flex justify-content-center'>";
         echo "<tr>";
-        echo "<th class='m-4 h2' >Num</th>";
-        echo "<th class='m-4 h2'>Id Produit</th>";
-        echo "<th class='m-4 h2'>Liste</th>";
-        echo "<th class='m-4 h2'>Prix</th>";
+        echo "<th class='mx-4 h2'>Num</th>";
+        echo "<th class='mx-4 h2'>Id Produit</th>";
+        echo "<th class='mx-4 h2'>Liste</th>";
+        echo "<th class='mx-4 h2'>Prix</th>";
+        echo "<th class='mx-4 h2'>Modifier</th>";
+        echo "<th class='mx-4 h2'>Suprimer</th>";
         echo "</tr>";
-        echo "</table>";
-        
+
         for ($i = 0; $i < count($tables); $i++) {
             echo "<tr>";
             echo "<td>" . $tables[$i]["liste"] . "</td>";
+            echo "<td>" . $tables[$i]["id_produits"] . "</td>";
             echo "<td>" . $tables[$i]["prix"] . "</td>";
-            echo "<td><span>";
-            echo "<input type=\"button\" onclick=\"location.href='crudUpdate.php?id=" . $tables[$i]["id_produits"] . "&titre=" . $tables[$i]["liste"] . "&prix=" . $tables[$i]["prix"] . "'\" \name=\"Modifier\" class=\"btn btn-success\" value=\"Modifier\">";
-            echo "<input type=\"button\" onclick=\"location.href='crudDelete.php?id=" . $tables[$i]["id_produits"] . "'\" \name=\"Supprimer\" class=\"btn btn-danger\" value=\"Supprimer\">";
+            echo "<td>" . $tables[$i]["dates"] . "</td>";
+            echo "<td><input type=\"button\" onclick=\"location.href='crudUpdate.php?id=" . $tables[$i]["id_produits"] . "&titre=" . $tables[$i]["liste"] . "&prix=" . $tables[$i]["prix"] . "'\" \name=\"Modifier\" class=\"btn btn-warning m-3\" value=\"Modifier\"></td>";
+            echo "<td><input type=\"button\" onclick=\"location.href='crudDelete.php?id=" . $tables[$i]["id_produits"] . "'\" \name=\"Supprimer\" class=\"btn btn-danger m-3\" value=\"Supprimer\"></td>";
+            echo "</tr>";
+            echo "</table>";
         }
         ?>
 

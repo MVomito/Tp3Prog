@@ -22,7 +22,7 @@
                 <input class="input" type="password" name="passwords" placeholder="Votre mot de passe" />
                 <div class="btnDiv d-flex flex-row m-3">
                     <input type="submit" name="submit" value="Envoyer" class="btnSubmit btn-success m-2" />
-                    <input type="submit" name="creer" value="S'inscire" class="btnCreate btn-warning m-2"/>
+                    <input type="submit" name="creer" value="S'inscire" class="btnCreate btn-info m-2"/>
                 </div>
             </form>
             <?php
