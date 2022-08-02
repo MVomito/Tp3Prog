@@ -1,4 +1,5 @@
 <?php
+// je n'ai pas reussi a le faire fonctioner mais je sent que j'etais tres proche !
 include "ConnexionBD.php";
 
 $id_produits = $_GET["id"];

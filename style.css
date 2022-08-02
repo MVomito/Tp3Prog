@@ -117,3 +117,7 @@ tr {
     margin: auto;
     margin-top: 20px;
   }
+
+  nav {
+    background-color: pink;
+  }
